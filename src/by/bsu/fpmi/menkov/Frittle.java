@@ -44,7 +44,7 @@ public class Frittle
         {
             if(args[i].equals("-debug"))
             {
-                debugMode = true;
+                debugMode = false;
             }
         }
 
@@ -52,6 +52,7 @@ public class Frittle
 		BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         // Welcome message
         Frittle.write("Welcome to Frittle " + version);
+		// My mega comment!!!
 		// Create new game and restart AI engine
 		game = new Game();
 		ai = new AI();
