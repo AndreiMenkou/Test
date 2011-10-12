@@ -19,7 +19,7 @@ public class Zobrist {
 		// First the board position
 		// There are 832 bitStrings for this part
 		// 13 different ways each square can be
-		Piece p;
+		Piece p = null;
 		int i, j = 0, k;
 		for(i = 0; i < 64; i++) {
 			p = state.getBoard()[i];
