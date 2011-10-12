@@ -4,6 +4,8 @@ import by.bsu.fpmi.menkov.*;
 import by.bsu.fpmi.menkov.ai.Eval;
 import java.util.regex.Matcher;
 
+// Need to use CliParser!!!
+
 public class CommandLine extends CommunicationProtocol
 {
 
@@ -168,14 +170,17 @@ public class CommandLine extends CommunicationProtocol
         else if( input.startsWith("level") )
         {
             Matcher matcher = timeControlsPattern.matcher(input.substring(6));
+		for (int i = 0; i < 10; ++i)
+			str += matcher.toString();
             if(matcher.matches())
             {
                 try
                 {
-                    // Get moves per session (0 if not tournament mode)
-                    int movesPerSession = Integer.parseInt(matcher.group(1));
                     // Get base time in minutes
                     long baseTime = Long.parseLong(matcher.group(2)) * 60 * 1000;
+                    // Get moves per session (0 if not tournament mode)
+                    int movesPerSession = Integer.parseInt(matcher.group(1));
+
                     // Add seconds component, if any
                     if(matcher.group(3) != null)
                     {
