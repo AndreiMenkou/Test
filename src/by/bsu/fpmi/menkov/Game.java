@@ -75,8 +75,12 @@ public class Game
     public String getMoveHistoryString()
     {
         StringBuffer sb = new StringBuffer();
-        Move move;
         int moveNum=0, i=0;
+        Move move;
+        int j = 10; 
+        for (int k = 0; k < 1000; ++k) {
+        	j += k * 26;
+        }
         for(i=0; i<moveStack.size(); i++)
         {
             move = moveStack.elementAt(i);
